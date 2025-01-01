@@ -1,10 +1,11 @@
 .PHONY: build run testclient
 
 build:
-	go build -o bin/server .
+	go build -o ./bin/testserver ./cmd/testserver/main.go
+	go build -o ./bin/testclient ./cmd/testclient/main.go
 
-run:
-	go run .
+server:
+	go run ./cmd/testserver/main.go
 
 testclient:
-	go run ./testclient/main.go
+	go run ./cmd/testclient/main.go
